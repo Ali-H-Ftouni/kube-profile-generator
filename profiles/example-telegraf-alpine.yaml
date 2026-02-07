@@ -1,0 +1,32 @@
+apiVersion: profilegen.dev/v1
+kind: Profile
+metadata:
+  name: telegraf-alpine
+spec:
+  image:
+    base: alpine
+    tag: "3.19"
+
+  packages:
+    - telegraf
+
+  networkPolicy:
+    podSelectorLabels:
+      app: telegraf
+
+    policyTypes: ["Ingress", "Egress"]
+
+    defaultDeny:
+      ingress: true
+      egress: true
+
+    ingress: []
+
+    egress:
+      - name: allow-https-to-monitoring
+        to:
+          - ipBlock:
+              cidr: "203.0.113.10/32"
+        ports:
+          - protocol: TCP
+            port: 443
