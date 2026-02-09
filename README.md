@@ -25,4 +25,19 @@ Ce projet permet de générer automatiquement :
 
 > Remarque : les commandes exactes seront ajoutées au fur et à mesure de l’implémentation du générateur.
 
+## Exemple implémenté : Telegraf Alpine
+
+Profil : `profiles/telegraf-alpine.yaml`
+
+### Contraintes respectées
+- OS : Alpine 3.19
+- Package : telegraf
+- Ingress : interdit (default deny)
+- Egress : autorisé uniquement en TCP/443 vers un endpoint de monitoring
+
+### Génération
+```bash
+python3 builder/main.py profiles/telegraf-alpine.yaml
+
+
 
