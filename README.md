@@ -27,7 +27,7 @@ Ce projet permet de générer automatiquement :
 
 ## Exemple implémenté : Telegraf Alpine
 
-Profil : `profiles/telegraf-alpine.yaml`
+Profil : `profiles/example-telegraf-alpine.yaml`
 
 ### Contraintes respectées
 - OS : Alpine 3.19
@@ -37,7 +37,4 @@ Profil : `profiles/telegraf-alpine.yaml`
 
 ### Génération
 ```bash
-python3 builder/main.py profiles/telegraf-alpine.yaml
-
-
-
+python3 builder/main.py profiles/example-telegraf-alpine.yaml
